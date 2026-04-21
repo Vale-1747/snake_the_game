@@ -39,6 +39,7 @@ namespace snake_the_game.controllers
             Console.SetCursorPosition(comida.x, comida.y);
             Console.Write("●");
             Console.ResetColor();
+            
         }
     }
 }
