@@ -129,7 +129,7 @@ namespace snake_the_game.controllers
             Console.Write("Game Over!!!");
             Console.SetCursorPosition(ancho - 5, alto);
             Console.ResetColor();
-            Console.WriteLine("\nToca cuaqueri letra para salir...");
+            Console.WriteLine("\nToca cualquier tecla para ir a la tabla...");
             Console.ReadKey(true); //si pongo false la letra aparece en pantalla y no quiero eso.
         }
         
@@ -150,7 +150,6 @@ namespace snake_the_game.controllers
             tablaResultados[1, 0] = "Puntaje Total";
             tablaResultados[1, 1] = puntajeFinal.ToString() + " pts";
 
-            // Llamamos al método que dibuja la estructura física
             DibujaTabla(tablaResultados);
         }
         private void DibujaTabla(string[,] matriz)
@@ -158,7 +157,6 @@ namespace snake_the_game.controllers
             int filas = matriz.GetLength(0);
             int columnas = matriz.GetLength(1);
 
-            // Medimos el ancho de cada columna para que los bordes encajen
             int[] anchos = new int[columnas];
             for (int c = 0; c < columnas; c++)
             {
@@ -167,12 +165,12 @@ namespace snake_the_game.controllers
                     if (matriz[f, c].Length > anchos[c])
                         anchos[c] = matriz[f, c].Length;
                 }
-                anchos[c] += 2; // Espacio de padding
+                anchos[c] += 2;
             }
 
             // Dibujo de la tabla
             for (int f = 0; f < filas; f++)
-            {
+            {    
                 // Línea superior de la fila
                 ImprimirLineaBorde(anchos);
 
@@ -196,7 +194,7 @@ namespace snake_the_game.controllers
             // Línea de cierre final
             ImprimirLineaBorde(anchos);
         }
-
+    
         private void ImprimirLineaBorde(int[] anchos)
         {
             foreach (int ancho in anchos)
