@@ -5,7 +5,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        nSnake juego = new nSnake();
-        juego.IniciarJuego();
+        Menu.Show();
     }
 }
