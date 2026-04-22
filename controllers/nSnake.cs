@@ -133,6 +133,7 @@ namespace snake_the_game.controllers
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("O");
             Console.ResetColor();
+            
         }
 
         private void DibujarBordes()
